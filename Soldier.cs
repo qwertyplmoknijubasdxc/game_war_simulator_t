@@ -1,22 +1,63 @@
 using System;
 
-namespace Template
+namespace GameWarSimulator
 {
+    /// <summary>
+    /// Specifies the type of connection a soldier has.
+    /// Vertical: Focuses on individual strength and loyalty.
+    /// Horizontal: Focuses on teamwork and respect.
+    /// </summary>
     public enum ConnectionType
     {
         Vertical,
         Horizontal
     }
 
+    /// <summary>
+    /// Represents a soldier with combat, loyalty, and teamwork attributes.
+    /// Inherits from Human.
+    /// </summary>
     public class Soldier : Human
     {
+        /// <summary>
+        /// The soldier's attack strength.
+        /// </summary>
         public int Attack { get; set; }
+        /// <summary>
+        /// The soldier's defense capability.
+        /// </summary>
         public int Defence { get; set; }
+        /// <summary>
+        /// The soldier's loyalty level.
+        /// </summary>
         public int Loyalty { get; set; }
+        /// <summary>
+        /// The soldier's respect level.
+        /// </summary>
         public int Respect { get; set; }
+        /// <summary>
+        /// The soldier's connection type (vertical or horizontal).
+        /// </summary>
         public ConnectionType Connection { get; set; }
+        /// <summary>
+        /// The soldier's teamwork ability.
+        /// </summary>
         public int Teamwork { get; set; }
 
+        /// <summary>
+        /// Initializes a new Soldier with the specified attributes.
+        /// Adjusts attributes based on the ConnectionType.
+        /// </summary>
+        /// <param name="name">The soldier's name.</param>
+        /// <param name="hp">The soldier's health points.</param>
+        /// <param name="attack">The soldier's attack value.</param>
+        /// <param name="defence">The soldier's defense value.</param>
+        /// <param name="loyalty">The soldier's loyalty value.</param>
+        /// <param name="respect">The soldier's respect value.</param>
+        /// <param name="connection">The soldier's connection type.</param>
+        /// <param name="teamwork">The soldier's teamwork value.</param>
+        /// <param name="iq">The soldier's IQ.</param>
+        /// <param name="physicalFitness">The soldier's physical fitness.</param>
         public Soldier(
             string name,
             int hp,
@@ -66,6 +107,9 @@ namespace Template
             }
         }
 
+        /// <summary>
+        /// Prints all soldier attributes to the console.
+        /// </summary>
         public void DisplayAttributes()
         {
             Console.WriteLine("Soldier Attributes:");

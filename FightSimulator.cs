@@ -1,10 +1,22 @@
 using System;
 
-namespace Template
+namespace GameWarSimulator
 {
+    /// <summary>
+    /// Provides functionality to simulate a fight between two <see cref="Soldier"/> objects
+    /// and determine the winner based on their combined attribute scores.
+    /// </summary>
     public class FightSimulator
     {
-        // Simulate a fight between two soldiers and return the winner
+        /// <summary>
+        /// Simulates a fight between two soldiers and returns the winner.
+        /// Calculates each soldier's total score using their attributes.
+        /// Displays each soldier's attributes and total score.
+        /// Returns the winning <see cref="Soldier"/> object, or <c>null</c> if the result is a draw.
+        /// </summary>
+        /// <param name="soldier1">The first soldier.</param>
+        /// <param name="soldier2">The second soldier.</param>
+        /// <returns>The winning <see cref="Soldier"/>, or <c>null</c> if it's a draw.</returns>
         public Soldier SimulateFight(Soldier soldier1, Soldier soldier2)
         {
             int score1 = CalculateScore(soldier1);
@@ -35,7 +47,12 @@ namespace Template
             }
         }
 
-        // Calculate the total attribute score for a soldier
+        /// <summary>
+        /// Calculates the total attribute score for a soldier by summing
+        /// HP, Attack, Defence, Loyalty, Respect, Teamwork, IQ, and PhysicalFitness.
+        /// </summary>
+        /// <param name="soldier">The soldier whose score to calculate.</param>
+        /// <returns>The total score as an integer.</returns>
         private int CalculateScore(Soldier soldier)
         {
             return soldier.HP +
@@ -47,7 +64,5 @@ namespace Template
                    soldier.IQ +
                    soldier.PhysicalFitness;
         }
-
-       
     }
 }
