@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace Template
+namespace GameWarSimulator
 {
     /// <summary>
     /// Enum representing different human races.
